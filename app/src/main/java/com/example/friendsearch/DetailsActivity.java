@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 import static com.example.friendsearch.R.array.friend_details;
@@ -22,24 +23,16 @@ public class DetailsActivity extends AppCompatActivity {
             R.drawable.boy5
     };
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_details);
 
-        peopleIndex = new HashMap<>();
-        peopleIndex.put("Chandler", 0);
-        peopleIndex.put("Joey", 1);
-        peopleIndex.put("Monica", 2);
-        peopleIndex.put("Phoebe", 3);
-        peopleIndex.put("Rachel", 4);
-        peopleIndex.put("Ross", 5);
-
         Intent intent = getIntent();
         String name = intent.getStringExtra("people_name");
 
-        int positionInArray = peopleIndex.get(name);
+        String[] friendsName = getResources().getStringArray(R.array.friend_names);
+        int positionInArray = Arrays.asList(friendsName).indexOf(name);
         ImageView imageView = findViewById(R.id.details_imageview);
         imageView.setImageResource(photos[positionInArray]);
 

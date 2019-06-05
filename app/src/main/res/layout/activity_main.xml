@@ -18,7 +18,7 @@
         android:text="Friendsr" />
 
     <TextView
-        android:textSize="18sp"
+        android:textSize="16sp"
         android:layout_marginLeft="10sp"
         android:layout_marginRight="10sp"
         android:text="@string/instruction"
@@ -36,6 +36,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:id="@+id/person1_imagebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -45,6 +46,7 @@
                 android:tag="Chandler" />
 
             <ImageButton
+                android:id="@+id/person2_imagebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -59,6 +61,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:id="@+id/person3_imagebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -67,6 +70,7 @@
                 android:tag="Monica" />
 
             <ImageButton
+                android:id="@+id/person4_imagebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -81,6 +85,7 @@
             android:layout_height="wrap_content">
 
             <ImageButton
+                android:id="@+id/person5_imagebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -89,6 +94,7 @@
                 android:tag="Rachel" />
 
             <ImageButton
+                android:id="@+id/person6_imagebutton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
