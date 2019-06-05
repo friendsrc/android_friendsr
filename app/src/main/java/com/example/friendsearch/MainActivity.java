@@ -10,16 +10,6 @@ import android.widget.TableLayout;
 
 public class MainActivity extends AppCompatActivity {
 
-    int[] buttonIds = {
-            R.id.person1_imagebutton,
-            R.id.person2_imagebutton,
-            R.id.person3_imagebutton,
-            R.id.person4_imagebutton,
-            R.id.person4_imagebutton,
-            R.id.person5_imagebutton,
-            R.id.person6_imagebutton
-    };
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,17 +17,6 @@ public class MainActivity extends AppCompatActivity {
 
         MediaPlayer player = MediaPlayer.create(MainActivity.this, R.raw.friends_theme);
         player.start();
-
-        for (Integer i: buttonIds) {
-            ImageButton imageButton  = findViewById(i);
-            imageButton.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    peopleClick(v);
-                }
-            });
-        }
-
     }
 
     public void peopleClick(View view) {
