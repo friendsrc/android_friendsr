@@ -16,6 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         MediaPlayer player = MediaPlayer.create(MainActivity.this, R.raw.friends_theme);
+        // set looping on the player
+        player.setLooping(true);
         player.start();
     }
 
