@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         player.start();
     }
 
+    // linking java and xml when the user click the photo
     public void peopleClick(View view) {
         ImageButton button = (ImageButton) view;
         String tag = button.getTag().toString();

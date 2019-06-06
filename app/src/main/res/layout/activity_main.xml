@@ -25,83 +25,168 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
+    <!-- If there is changes please put comment here -->
     <TableLayout
         android:id="@+id/table_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
 
+        <!-- If there is changes please put comment here -->
         <TableRow
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/person1_imagebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
                 android:layout_weight="1"
-                android:onClick="peopleClick"
-                android:scaleType="fitCenter"
-                android:src="@drawable/boy1"
-                android:tag="Chandler" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/person2_imagebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="peopleClick"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/chandler"
+                    android:tag="Chandler Bing" />
+
+                <TextView
+                    android:text="Chandler Bing"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_weight="1"
-                android:scaleType="fitCenter"
-                android:src="@drawable/boy2"
-                android:tag="Joey" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="peopleClick"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/joey"
+                    android:tag="Joey Tribbiani" />
+
+                <TextView
+                    android:text="Joey Tribbiani"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
         </TableRow>
 
+        <!-- If there is changes please put comment here -->
         <TableRow
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/person3_imagebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
                 android:layout_weight="1"
-                android:scaleType="fitCenter"
-                android:src="@drawable/boy3"
-                android:tag="Monica" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/person4_imagebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="peopleClick"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/monica"
+                    android:tag="Monica Geller" />
+
+                <TextView
+                    android:text="Monica Geller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <!-- If there is changes please put comment here -->
+            <LinearLayout
                 android:layout_weight="1"
-                android:scaleType="fitCenter"
-                android:src="@drawable/girl1"
-                android:tag="Phoebe" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="peopleClick"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/phoebe"
+                    android:tag="Phoebe Buffay" />
+
+                <TextView
+                    android:text="Phoebe Buffay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
         </TableRow>
 
+        <!-- If there is changes please put comment here -->
         <TableRow
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/person5_imagebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+            <LinearLayout
                 android:layout_weight="1"
-                android:scaleType="fitCenter"
-                android:src="@drawable/boy4"
-                android:tag="Rachel" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
 
-            <ImageButton
-                android:id="@+id/person6_imagebutton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="peopleClick"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/rachel"
+                    android:tag="Rachel Green" />
+
+                <TextView
+                    android:text="Rachel Green"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <LinearLayout
                 android:layout_weight="1"
-                android:scaleType="fitCenter"
-                android:src="@drawable/boy5"
-                android:tag="Ross" />
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:onClick="peopleClick"
+                    android:scaleType="fitCenter"
+                    android:src="@drawable/ross"
+                    android:tag="Ross Geller" />
+
+                <TextView
+                    android:text="Ross Geller"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
         </TableRow>
     </TableLayout>
-
 </LinearLayout>
