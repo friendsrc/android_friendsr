@@ -28,14 +28,14 @@
     <!-- If there is changes please put comment here -->
     <TableLayout
         android:id="@+id/table_layout"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <!-- If there is changes please put comment here -->
+        <!-- Changed all the image buttons' height to 400dp -->
         <TableRow
             android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
+            android:layout_width="match_parent"
+            android:layout_height="400dp">
 
             <LinearLayout
                 android:layout_weight="1"
@@ -46,7 +46,7 @@
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="400dp"
                     android:layout_weight="1"
                     android:onClick="peopleClick"
                     android:scaleType="fitCenter"
@@ -64,12 +64,12 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:orientation="vertical"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="400dp"
                     android:layout_weight="1"
                     android:onClick="peopleClick"
                     android:scaleType="fitCenter"
@@ -99,7 +99,7 @@
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="400dp"
                     android:layout_weight="1"
                     android:onClick="peopleClick"
                     android:scaleType="fitCenter"
@@ -122,7 +122,7 @@
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="400dp"
                     android:layout_weight="1"
                     android:onClick="peopleClick"
                     android:scaleType="fitCenter"
@@ -152,7 +152,7 @@
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="400dp"
                     android:layout_weight="1"
                     android:onClick="peopleClick"
                     android:scaleType="fitCenter"
@@ -175,7 +175,7 @@
 
                 <ImageButton
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="400dp"
                     android:layout_weight="1"
                     android:onClick="peopleClick"
                     android:scaleType="fitCenter"

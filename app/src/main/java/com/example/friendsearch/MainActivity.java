@@ -14,11 +14,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        MediaPlayer player = MediaPlayer.create(MainActivity.this, R.raw.friends_theme);
-        // set looping on the player
-        player.setLooping(true);
-        player.start();
     }
 
     // linking java and xml when the user click the photo
