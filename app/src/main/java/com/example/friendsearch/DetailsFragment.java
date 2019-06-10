@@ -10,12 +10,16 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.Scanner;
+
+import stanford.androidlib.SimpleActivity;
+import stanford.androidlib.SimpleFragment;
 
 import static android.content.Context.MODE_PRIVATE;
 
@@ -39,7 +43,7 @@ public class DetailsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        final Activity activity = getActivity();
+        Activity activity = getActivity();
 
         // grab the intent from MainActivity where name equals the tag stated in activity_main.xml
         Intent intent = activity.getIntent();
@@ -57,7 +61,7 @@ public class DetailsFragment extends Fragment {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
                 Toast.makeText(
-                        activity,
+                        getActivity(),
                         "You gave " + name + " " + rating + " star",
                         Toast.LENGTH_SHORT
                 ).show();
@@ -67,10 +71,17 @@ public class DetailsFragment extends Fragment {
         });
     }
 
-    public void setPeopleName(final String name) {
-        // changing "rachel" -> "R.drawable.rachel"
+    public void setPeopleName(String name) {
         Activity activity = getActivity();
+
+        // when the apps first loaded, name is null, default change into chandler
+        if (name == null) {
+            name = "Chandler Bing";
+        }
+
         String[] fullname = name.split(" ");
+
+        // changing "rachel" -> "R.drawable.rachel"
         int imageID = getResources().getIdentifier(fullname[0].toLowerCase(), "drawable", activity.getPackageName());
 
         // changing "rachel" -> "R.raw.rachel"

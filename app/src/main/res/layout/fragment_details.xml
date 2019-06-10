@@ -7,13 +7,11 @@
     android:layout_height="match_parent"
     tools:context=".DetailsFragment">
 
-
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="252dp">
-
 
         <LinearLayout
             android:paddingTop="30dp"
@@ -23,7 +21,7 @@
 
             <TextView
                 android:id="@+id/people_name"
-                android:text="placeholder_name"
+                android:text="place_name"
                 android:textSize="42sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
