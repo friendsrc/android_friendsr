@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-    // linking java and xml when the user click the photo
+    /* linking java and xml when the user click the photo -- moved to fragment
+
     public void peopleClick(View view) {
         ImageButton button = (ImageButton) view;
         String tag = button.getTag().toString();
@@ -25,4 +26,6 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra("people_name", tag);
         startActivity(intent);
     }
+
+    */
 }

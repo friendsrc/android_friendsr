@@ -1,14 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
-    android:gravity="center"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".DetailsActivity">
+    android:layout_height="match_parent">
 
     <fragment
+        android:layout_weight="1"
+        android:id="@+id/frag_main"
+        tools:layout="@layout/fragment_main"
+        android:name="com.example.friendsearch.MainFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- this fragment causes an error, please check Details Fragment -->
+    <fragment
+        android:layout_weight="1"
         android:id="@+id/frag_details"
         android:name="com.example.friendsearch.DetailsFragment"
         android:layout_width="match_parent"

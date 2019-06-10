@@ -36,11 +36,6 @@
         android:text="Make a new profile"
         android:layout_marginBottom="100dp"
         android:textSize="20sp"
-        android:padding="20sp"
-        />
-
-
-
-
+        android:padding="20sp" />
 
 </LinearLayout>

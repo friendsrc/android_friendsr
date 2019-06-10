@@ -6,8 +6,7 @@
     android:gravity="center"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetailsActivity"
-    >
+    tools:context=".DetailsActivity">
 
     <ImageView
         android:id="@+id/new_profile_picture_image_view"
@@ -52,6 +51,5 @@
         android:padding="15dp"
         android:text="Create profile"
         android:textSize="20sp" />
-
 
 </LinearLayout>
