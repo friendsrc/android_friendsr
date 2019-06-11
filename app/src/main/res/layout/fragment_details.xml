@@ -8,24 +8,26 @@
     tools:context=".DetailsFragment">
 
     <ScrollView
+        android:id="@+id/scrollview"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="252dp">
 
         <LinearLayout
-            android:paddingTop="30dp"
+            android:id="@+id/scrollview_linear_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingTop="30dp">
 
             <TextView
                 android:id="@+id/people_name"
-                android:text="place_name"
-                android:textSize="42sp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal"
+                android:text="place_name"
+                android:textSize="42sp" />
 
             <RatingBar
                 android:id="@+id/rating_bar"

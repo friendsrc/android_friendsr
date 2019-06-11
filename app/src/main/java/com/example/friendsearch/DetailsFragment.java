@@ -13,9 +13,11 @@ import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.ScrollView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 import stanford.androidlib.SimpleActivity;
@@ -28,6 +30,9 @@ import static android.content.Context.MODE_PRIVATE;
  * A simple {@link Fragment} subclass.
  */
 public class DetailsFragment extends Fragment {
+
+    private String currentName;
+
     public DetailsFragment() {
         // Required empty public constructor
     }
@@ -43,36 +48,85 @@ public class DetailsFragment extends Fragment {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
 
-        Activity activity = getActivity();
+        final Activity activity = getActivity();
 
         // grab the intent from MainActivity where name equals the tag stated in activity_main.xml
         Intent intent = activity.getIntent();
         final String name = intent.getStringExtra("people_name");
         setPeopleName(name);
+        currentName = name;
 
         // create a SharedPreferences to store ratings
         SharedPreferences pref = activity.getApplicationContext().getSharedPreferences("Ratings", MODE_PRIVATE);
         final SharedPreferences.Editor editor = pref.edit();
 
         // check if a rating already exists and set a listener on the RatingBar
-        RatingBar ratingBar = activity.findViewById(R.id.rating_bar);
+        final RatingBar ratingBar = activity.findViewById(R.id.rating_bar);
         ratingBar.setRating(pref.getFloat(name, 0));
         ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser) {
-                Toast.makeText(
-                        getActivity(),
-                        "You gave " + name + " " + rating + " star",
-                        Toast.LENGTH_SHORT
-                ).show();
                 editor.putFloat(name, rating);
                 editor.apply();
             }
         });
+
+        // set on touch listener on the imageview
+        // ?? (tried to set it on the scroll view and textview, didn't work)
+        ImageView imageView = activity.findViewById(R.id.poeple_image);
+        imageView.setOnTouchListener(new OnSwipeTouchListener(getContext()) {
+
+            @Override
+            public void onSwipeLeft(float dx) {
+                super.onSwipeLeft(dx);
+                setNextPerson(1);
+            }
+
+            @Override
+            public void onSwipeRight(float dx) {
+                super.onSwipeRight(dx);
+                setNextPerson(5);
+            }
+        });
+    }
+
+    // update to the next person when swiped
+    public void setNextPerson(int prevPersonRating) {
+        // get the index for the next person
+        String[] nameArray = getResources().getStringArray(R.array.friend_full_names);
+        int currentIndex = Arrays.asList(nameArray).indexOf(currentName);
+        int nextIndex = (currentIndex + 1) % nameArray.length;
+
+        // update and save the rating for the current person
+        RatingBar ratingBar = getActivity().findViewById(R.id.rating_bar);
+        SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("Ratings", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = pref.edit();
+        editor.putFloat(currentName, prevPersonRating);
+        editor.apply();
+
+        // create a toast to notify that change had been made
+        Toast.makeText(
+                getActivity(),
+                "You swiped " + currentName + " and left " + prevPersonRating + " star",
+                Toast.LENGTH_SHORT
+        ).show();
+
+        // update name, photo, description to the next person
+        currentName = nameArray[nextIndex];
+        setPeopleName(currentName);
     }
 
     public void setPeopleName(String name) {
         Activity activity = getActivity();
+
+        // update current name
+        currentName = name;
+
+        // check if rating already exist and update accordingly
+        RatingBar ratingBar = activity.findViewById(R.id.rating_bar);
+        SharedPreferences pref = activity.getApplicationContext().getSharedPreferences("Ratings", MODE_PRIVATE);
+        ratingBar.setRating(pref.getFloat(name, 0));
+
 
         // when the apps first loaded, name is null, default change into chandler
         if (name == null) {
