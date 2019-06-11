@@ -101,6 +101,7 @@ public class DetailsFragment extends Fragment {
         RatingBar ratingBar = getActivity().findViewById(R.id.rating_bar);
         SharedPreferences pref = getActivity().getApplicationContext().getSharedPreferences("Ratings", MODE_PRIVATE);
         final SharedPreferences.Editor editor = pref.edit();
+        ratingBar.setRating(prevPersonRating);
         editor.putFloat(currentName, prevPersonRating);
         editor.apply();
 
