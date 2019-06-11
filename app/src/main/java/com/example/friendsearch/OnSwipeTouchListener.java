@@ -32,28 +32,16 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
         @Override
         public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
             float dx = e2.getRawX() - e1.getRawX();
-            float dy = e2.getRawY() - e1.getRawY();
 
-//            if (dx > 0) {
-//                onSwipeRight(dx);
-//                return true;
-//            } else if (dx < 0) {
-//                onSwipeLeft(-dx);
-//                return true;
-//            }
-
-            if ((Math.abs(dx) > Math.abs(dy)) &&
-                    (Math.abs(dx) > mSwipeDistanceThreshold) &&
+            if ((Math.abs(dx) > mSwipeDistanceThreshold) &&
                     (Math.abs(velocityX) > mSwipeVelocityThreshold)) {
                 if (dx > 0) {
                     onSwipeRight(dx);
                 } else {
                     onSwipeLeft(-dx);
                 }
-
                 return true;
             }
-
             return false;
         }
     }
@@ -66,6 +54,7 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
+
 
         boolean gesture = false;
 
@@ -86,19 +75,15 @@ public class OnSwipeTouchListener implements View.OnTouchListener {
                     break;
 
                 case MotionEvent.ACTION_UP:
-                    if ((Math.abs(mDx) > Math.abs(mDy)) &&
-                            (Math.abs(mDx) > mSwipeDistanceThreshold)) {
-//                    if (Math.abs(mDx) > 0) {
+                    if ((Math.abs(mDx) > mSwipeDistanceThreshold)) {
                         if (mDx > 0) {
                             onSwipeRight(mDx);
                         } else {
                             onSwipeLeft(-mDx);
                         }
-
                         return true;
                     }
             }
-
             gesture = mGestureDetector.onTouchEvent(event);
         }
 
